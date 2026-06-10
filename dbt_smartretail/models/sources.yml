@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: silver
+    catalog: smartretail
+    schema: silver
+    description: >
+      Cleaned and validated Silver layer — Databricks Delta tables.
+    tables:
+      - name: transaction_headers
+      - name: transaction_lines
+      - name: stores
+      - name: products
+      - name: customers
+      - name: inventory
+      - name: promotions

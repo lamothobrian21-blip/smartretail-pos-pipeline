@@ -1,0 +1,15 @@
+.env
+venv/
+__pycache__/
+*.pyc
+data/landing/
+data/bronze/
+data/silver/
+data/gold/
+data/audit/
+dbt_smartretail/target/
+dbt_smartretail/dbt_packages/
+dbt_smartretail/logs/
+*.png
+.DS_Store
+Thumbs.db

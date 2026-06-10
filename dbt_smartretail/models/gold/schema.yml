@@ -1,0 +1,150 @@
+version: 2
+
+models:
+
+  - name: gold_sales_daily
+    description: Daily sales by store, product, and payment method
+    columns:
+      - name: sales_date
+        tests: [not_null]
+      - name: store_id
+        tests: [not_null]
+      - name: product_id
+        tests: [not_null]
+      - name: total_transactions
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: total_sales
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: total_units
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: average_basket_value
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values: ['CARD', 'CASH', 'DIGITAL', 'VOUCHER']
+
+  - name: gold_inventory_risk_daily
+    description: Inventory stockout risk per store and product
+    columns:
+      - name: inventory_id
+        tests: [not_null, unique]
+      - name: store_id
+        tests: [not_null]
+      - name: product_id
+        tests: [not_null]
+      - name: stock_on_hand
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: days_of_stock_remaining
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: stockout_risk_level
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['OK', 'LOW', 'CRITICAL', 'OUT_OF_STOCK']
+
+  - name: gold_customer_lifetime_value
+    description: Lifetime purchase behaviour per customer
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: total_spend
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: total_orders
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: purchase_frequency_band
+        tests:
+          - accepted_values:
+              values: ['VIP', 'LOYAL', 'RETURNING', 'ONE_TIME']
+      - name: spend_band
+        tests:
+          - accepted_values:
+              values: ['HIGH_VALUE', 'MID_VALUE', 'LOW_VALUE']
+
+  - name: gold_store_performance
+    description: Daily store-level KPIs
+    columns:
+      - name: store_id
+        tests: [not_null]
+      - name: sales_date
+        tests: [not_null]
+      - name: total_sales
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: total_transactions
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: region
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['EMEA', 'APAC', 'AMER', 'LATAM']
+
+  - name: gold_product_performance
+    description: Product-level sales performance
+    columns:
+      - name: product_id
+        tests: [not_null, unique]
+      - name: total_revenue
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: category
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Electronics', 'Apparel', 'Food', 'Health', 'Home']
+
+  - name: gold_promotion_effectiveness
+    description: Promotion revenue and discount impact
+    columns:
+      - name: promotion_id
+        tests: [not_null, unique]
+      - name: discount_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['PERCENT', 'FIXED', 'BOGO']
+      - name: discounted_revenue
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: transactions_with_discount
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: discount_value_pct
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "> 0"

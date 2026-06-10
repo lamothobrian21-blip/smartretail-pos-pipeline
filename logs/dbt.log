@@ -1,0 +1,29 @@
+[0m07:55:24.690203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025225211810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025224211A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002522420BA10>]}
+
+
+============================== 07:55:24.695980 | aee27cb3-1c38-4138-855a-d70c984a55d9 ==============================
+[0m07:55:24.695980 [info ] [MainThread]: Running with dbt=1.11.8
+[0m07:55:24.695980 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt init dbt_smartretail', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m07:55:24.723808 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Admin\.dbt
+[0m07:55:24.725850 [info ] [MainThread]: A project called dbt_smartretail already exists here.
+[0m07:55:24.727082 [debug] [MainThread]: Command `dbt init` succeeded at 07:55:24.725850 after 0.12 seconds
+[0m07:55:24.727082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002522415D550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025224218B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002521D3FAB50>]}
+[0m07:55:24.728177 [debug] [MainThread]: Flushing usage events
+[0m07:55:25.209229 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:37:31.850117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001918EBDBE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001918DAE0F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001918DB8F590>]}
+
+
+============================== 08:37:31.851892 | 8705e1c5-8e77-412a-82aa-95a09a075288 ==============================
+[0m08:37:31.851892 [info ] [MainThread]: Running with dbt=1.11.8
+[0m08:37:31.851892 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m08:37:31.869192 [info ] [MainThread]: dbt version: 1.11.8
+[0m08:37:31.869192 [info ] [MainThread]: python version: 3.11.4
+[0m08:37:31.869192 [info ] [MainThread]: python path: C:\Users\Admin\smartretail\venv\Scripts\python.exe
+[0m08:37:31.875571 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m08:37:31.880122 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DATABRICKS_TOKEN'
+[0m08:37:31.882003 [debug] [MainThread]: Command `dbt debug` failed at 08:37:31.880122 after 0.11 seconds
+[0m08:37:31.882003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001918DB9CD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001918DAE0E90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001918CCC7590>]}
+[0m08:37:31.883020 [debug] [MainThread]: Flushing usage events
+[0m08:37:32.210793 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,12 @@
+{
+  "num_stores": 20,
+  "num_products": 500,
+  "num_customers": 10000,
+  "transactions_per_day": 5000,
+  "lines_per_transaction_min": 1,
+  "lines_per_transaction_max": 8,
+  "regions": ["EMEA", "APAC", "AMER", "LATAM"],
+  "store_formats": ["FLAGSHIP", "EXPRESS", "ONLINE"],
+  "product_categories": ["Electronics", "Apparel", "Food", "Health", "Home"],
+  "currency": "USD"
+}

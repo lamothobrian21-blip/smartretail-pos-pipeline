@@ -1,0 +1,9 @@
+{
+  "null_injection_rate": 0.03,
+  "duplicate_rate": 0.02,
+  "invalid_amount_rate": 0.01,
+  "future_date_rate": 0.005,
+  "invalid_store_id_rate": 0.01,
+  "negative_quantity_rate": 0.008,
+  "encoding_error_rate": 0.002
+}

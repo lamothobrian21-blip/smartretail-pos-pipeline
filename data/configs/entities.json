@@ -1,0 +1,11 @@
+{
+  "entities": [
+    { "name": "stores",               "primary_key": "store_id",       "load_order": 1 },
+    { "name": "products",             "primary_key": "product_id",     "load_order": 2 },
+    { "name": "customers",            "primary_key": "customer_id",    "load_order": 3 },
+    { "name": "transaction_headers",  "primary_key": "transaction_id", "load_order": 4 },
+    { "name": "transaction_lines",    "primary_key": "line_id",        "load_order": 5 },
+    { "name": "inventory",            "primary_key": "inventory_id",   "load_order": 6 },
+    { "name": "promotions",           "primary_key": "promotion_id",   "load_order": 7 }
+  ]
+}
